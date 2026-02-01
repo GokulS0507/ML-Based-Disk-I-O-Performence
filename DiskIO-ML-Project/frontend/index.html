@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiskMonitor ML | Real-time I/O Analytics</title>
+  <!-- Modern Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand">
+      <span class="brand-icon">🛡️</span>
+      <span>DiskMonitor ML <span style="font-weight: 400; color: var(--text-muted);"></span></span>
+    </div>
+    <div
+      style="font-size: 0.8rem; background: var(--primary-light); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-weight: 600;">
+      LIVE ENGINE ACTIVE
+    </div>
+  </nav>
+
+  <main class="main-container">
+
+    <!-- Summary Cards Section -->
+    <section class="summary-grid">
+      <div class="summary-card">
+        <div class="icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">📥</div>
+        <div class="card-info">
+          <h3>Disk Read</h3>
+          <div class="value" id="read">-- B</div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="icon-wrapper" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">📤</div>
+        <div class="card-info">
+          <h3>Disk Write</h3>
+          <div class="value" id="write">-- B</div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="icon-wrapper" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">⚡</div>
+        <div class="card-info">
+          <h3>CPU Usage</h3>
+          <div class="value" id="cpu">-- %</div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">🧠</div>
+        <div class="card-info">
+          <h3>Memory Usage</h3>
+          <div class="value" id="memory">-- %</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ML Prediction Section -->
+    <section class="prediction-section">
+      <div class="prediction-content">
+        <h2>ML Load Projection</h2>
+        <div class="prediction-display">
+          <span id="prediction">--</span>
+          <span class="prediction-unit">MB</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+          * Predicted read activity based on current system pressure
+        </p>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600;">SYSTEM
+          HEALTH STATUS</div>
+        <span id="status">INITIALIZING</span>
+      </div>
+    </section>
+
+    <!-- Charts Grid -->
+    <section class="charts-grid">
+      <div class="chart-card">
+        <h2>Throughput Trends (Bytes)</h2>
+        <div class="canvas-container">
+          <canvas id="diskIOChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h2>Resource Utilization (%)</h2>
+        <div class="canvas-container">
+          <canvas id="systemUsageChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card full-width">
+        <h2>Intelligent Load Forecast (MB)</h2>
+        <div class="canvas-container">
+          <canvas id="predictionChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DiskMonitor ML Project • Senior Systems Architecture</p>
+    <p style="margin-top: 0.5rem; opacity: 0.6;">Real-time Performance Monitoring & ML Inference Engine</p>
+  </footer>
+
+  <!-- Core Logic (Preserved) -->
+  <script src="script.js"></script>
+</body>
+
+</html>
